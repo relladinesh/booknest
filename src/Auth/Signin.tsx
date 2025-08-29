@@ -16,58 +16,54 @@ const PALETTE = {
   buttonGoogleText: "#232946" // Google button text
 };
 
-const TOASTER_OPTIONS = {
-  position: "top-right",
-  reverseOrder: false,
-  toastOptions: {
+const TOASTER_TOAST_OPTIONS = {
+  style: {
+    borderRadius: '8px',
+    padding: '16px',
+    fontSize: '1rem',
+    fontWeight: 500,
+    minWidth: '270px'
+  },
+  success: {
     style: {
-      borderRadius: '8px',
-      padding: '16px',
-      fontSize: '1rem',
-      fontWeight: 500,
-      minWidth: '270px'
+      background: '#21ba45',
+      color: '#fff',
     },
-    success: {
-      style: {
-        background: '#21ba45',
-        color: '#fff',
-      },
-      iconTheme: {
-        primary: '#fff',
-        secondary: '#21ba45',
-      },
+    iconTheme: {
+      primary: '#fff',
+      secondary: '#21ba45',
     },
-    error: {
-      style: {
-        background: '#ff4d4f',
-        color: '#fff',
-      },
-      iconTheme: {
-        primary: '#fff',
-        secondary: '#ff4d4f',
-      },
+  },
+  error: {
+    style: {
+      background: '#ff4d4f',
+      color: '#fff',
     },
-    info: {
-      style: {
-        background: '#f4f4f4',
-        color: '#333',
-      },
-      iconTheme: {
-        primary: '#333',
-        secondary: '#f4f4f4',
-      },
+    iconTheme: {
+      primary: '#fff',
+      secondary: '#ff4d4f',
     },
-    loading: {
-      style: {
-        background: '#ffca28',
-        color: '#222',
-      },
-      iconTheme: {
-        primary: '#fff',
-        secondary: '#ffca28',
-      },
+  },
+  info: {
+    style: {
+      background: '#f4f4f4',
+      color: '#333',
     },
-  }
+    iconTheme: {
+      primary: '#333',
+      secondary: '#f4f4f4',
+    },
+  },
+  loading: {
+    style: {
+      background: '#ffca28',
+      color: '#222',
+    },
+    iconTheme: {
+      primary: '#fff',
+      secondary: '#ffca28',
+    },
+  },
 };
 
 const Signin: React.FC = () => {
@@ -145,7 +141,11 @@ const Signin: React.FC = () => {
         background: `linear-gradient(100deg, #E9EAFE 0%, ${PALETTE.background} 60%, ${PALETTE.buttonGoogle} 100%)`
       }}
     >
-      <Toaster {...TOASTER_OPTIONS} />
+      <Toaster
+        position="top-right"
+        reverseOrder={false}
+        toastOptions={TOASTER_TOAST_OPTIONS}
+      />
       <div
         className="w-full max-w-md p-8 rounded-2xl shadow-2xl flex flex-col items-center"
         style={{
