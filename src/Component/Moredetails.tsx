@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
-import { supabase } from "../../supa/Supabaseclient";
+import { supabase } from "../../supa/supabaseclient";
 import { Loader2, ArrowLeft, Mail, Calendar, User } from "lucide-react";
 import { toast } from "react-hot-toast";
 
