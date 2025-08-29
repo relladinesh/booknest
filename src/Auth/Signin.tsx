@@ -79,6 +79,7 @@ const Signin: React.FC = () => {
     // Only redirect if session is available and user is in users table
     const checkProfile = async () => {
       if (session?.user?.email) {
+        // @ts-expect-error: supabase is attached to window at runtime
         const { data } = await window.supabase
           .from("users")
           .select("id")
